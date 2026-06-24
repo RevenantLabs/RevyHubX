@@ -10,10 +10,12 @@ const repo = process.env.GITHUB_REPOSITORY || process.env.GH_REPO || defaultRepo
 const dryRun = process.argv.includes("--dry-run");
 
 function runGh(args, options = {}) {
-  return execFileSync("gh", args, {
+  const output = execFileSync("gh", args, {
     encoding: "utf8",
     stdio: options.stdio ?? ["ignore", "pipe", "pipe"]
-  }).trim();
+  });
+
+  return typeof output === "string" ? output.trim() : "";
 }
 
 function assertGhReady() {
