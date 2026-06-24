@@ -1,0 +1,54 @@
+"use client";
+
+import { useState } from "react";
+import { TransactionDetails, type TransactionSummary } from "@/components/stellar/TransactionDetails";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
+import { Input } from "@/components/ui/Input";
+import { StatusMessage } from "@/components/ui/StatusMessage";
+import { lookupTransaction } from "@/lib/stellar/transaction";
+
+export default function TransactionLookupPage() {
+  const [hash, setHash] = useState("");
+  const [transaction, setTransaction] = useState<TransactionSummary | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "error", text: "Enter a testnet transaction hash to inspect basic details." });
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoading(true);
+    setTransaction(null);
+
+    try {
+      const result = await lookupTransaction(hash);
+      setTransaction(result);
+      setMessage({ type: "success", text: "Transaction loaded from testnet Horizon." });
+    } catch (error) {
+      setMessage({ type: "error", text: error instanceof Error ? error.message : "Unexpected error." });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className="mx-auto max-w-4xl space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold text-white">Transaction Lookup</h1>
+        <p className="mt-2 text-slate-400">Fetch MVP transaction details from Stellar testnet Horizon.</p>
+      </div>
+      <Card>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <label className="block space-y-2">
+            <span className="text-sm font-medium text-slate-200">Transaction hash</span>
+            <Input value={hash} onChange={(event) => setHash(event.target.value)} placeholder="64 character hash" spellCheck={false} />
+          </label>
+          <Button type="submit" disabled={loading}>
+            {loading ? "Looking up..." : "Look up transaction"}
+          </Button>
+        </form>
+      </Card>
+      <StatusMessage type={message.type} title="Lookup status" description={message.text} />
+      {transaction ? <TransactionDetails transaction={transaction} /> : null}
+    </div>
+  );
+}
