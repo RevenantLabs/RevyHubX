@@ -4,13 +4,14 @@ import { useState } from "react";
 import { AddressInput } from "@/components/stellar/AddressInput";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { CharacterPanel } from "@/components/ui/CharacterPanel";
 import { StatusMessage } from "@/components/ui/StatusMessage";
 import { fundTestnetAccount } from "@/lib/stellar/friendbot";
 
 export default function TestnetFaucetPage() {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "warning" | "error", text: "Friendbot funds accounts only on Stellar testnet." });
+  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "warning" | "error", text: "The faucet helper pours testnet XLM only. No real funds are involved." });
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -18,7 +19,7 @@ export default function TestnetFaucetPage() {
 
     try {
       await fundTestnetAccount(address);
-      setMessage({ type: "success", text: "Friendbot request completed for this testnet account." });
+      setMessage({ type: "success", text: "The faucet helper sent the Friendbot request for this testnet account." });
     } catch (error) {
       setMessage({ type: "error", text: error instanceof Error ? error.message : "Unexpected error." });
     } finally {
@@ -28,19 +29,21 @@ export default function TestnetFaucetPage() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-white">Testnet Faucet Helper</h1>
-        <p className="mt-2 text-slate-400">Fund Stellar testnet accounts with Friendbot. No real funds are involved.</p>
-      </div>
+      <CharacterPanel
+        tone="faucet"
+        eyebrow="Faucet helper"
+        title="Testnet Faucet Helper"
+        description="The faucet helper pours harmless testnet XLM into a public account through Friendbot."
+      />
       <Card>
         <form onSubmit={handleSubmit} className="space-y-5">
           <AddressInput value={address} onChange={setAddress} />
           <Button type="submit" disabled={loading}>
-            {loading ? "Requesting..." : "Fund testnet account"}
+            {loading ? "Pouring..." : "Ask faucet helper to fund"}
           </Button>
         </form>
       </Card>
-      <StatusMessage type={message.type} title="Friendbot status" description={message.text} />
+      <StatusMessage type={message.type} title="Faucet helper status" description={message.text} />
       <StatusMessage type="warning" title="Testnet only" description="Friendbot resets and testnet XLM have no market value." />
     </div>
   );

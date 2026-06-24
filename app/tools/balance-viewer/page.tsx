@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { CharacterPanel } from "@/components/ui/CharacterPanel";
 import { StatusMessage } from "@/components/ui/StatusMessage";
 import { AddressInput } from "@/components/stellar/AddressInput";
 import { BalanceList, type DisplayBalance } from "@/components/stellar/BalanceList";
@@ -13,7 +14,7 @@ export default function BalanceViewerPage() {
   const [balances, setBalances] = useState<DisplayBalance[]>([]);
   const [message, setMessage] = useState<{ type: "info" | "success" | "error"; text: string }>({
     type: "info",
-    text: "Enter a funded testnet account address to inspect balances."
+    text: "The moon wallet is waiting for a funded testnet account address."
   });
   const [loading, setLoading] = useState(false);
 
@@ -25,7 +26,7 @@ export default function BalanceViewerPage() {
     try {
       const nextBalances = await getAccountBalances(address);
       setBalances(nextBalances);
-      setMessage({ type: "success", text: "Balances loaded from Stellar testnet Horizon." });
+      setMessage({ type: "success", text: "The moon wallet opened and counted balances from testnet Horizon." });
     } catch (error) {
       setMessage({ type: "error", text: error instanceof Error ? error.message : "Unexpected error." });
     } finally {
@@ -35,19 +36,21 @@ export default function BalanceViewerPage() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-white">Balance Viewer</h1>
-        <p className="mt-2 text-slate-400">Fetch native and issued asset balances from testnet Horizon.</p>
-      </div>
+      <CharacterPanel
+        tone="moon"
+        eyebrow="Moon wallet"
+        title="Balance Viewer"
+        description="The moon wallet opens its pockets and shows native XLM plus issued assets from Stellar testnet Horizon."
+      />
       <Card>
         <form onSubmit={handleSubmit} className="space-y-5">
           <AddressInput value={address} onChange={setAddress} />
           <Button type="submit" disabled={loading}>
-            {loading ? "Loading..." : "Load balances"}
+            {loading ? "Counting..." : "Open moon wallet"}
           </Button>
         </form>
       </Card>
-      <StatusMessage type={message.type} title={message.type === "success" ? "Account loaded" : "Balance status"} description={message.text} />
+      <StatusMessage type={message.type} title={message.type === "success" ? "Wallet opened" : "Moon wallet status"} description={message.text} />
       {balances.length > 0 ? <BalanceList balances={balances} /> : null}
     </div>
   );

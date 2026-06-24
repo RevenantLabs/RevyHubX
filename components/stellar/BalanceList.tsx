@@ -13,13 +13,13 @@ export function BalanceList({ balances }: { balances: DisplayBalance[] }) {
       {balances.map((balance) => (
         <div
           key={`${balance.assetCode}-${balance.issuer ?? "native"}`}
-          className="rounded-lg border border-white/10 bg-surface-950 p-4"
+          className="rounded-[1rem] border border-[#fff1cc]/14 bg-[#0b0d16] p-4 shadow-[4px_4px_0_rgba(84,210,255,0.12)]"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-sm font-semibold text-white">{balance.assetCode}</p>
               <p className="mt-1 text-xs text-slate-500">
-                {balance.issuer ? truncateMiddle(balance.issuer) : "Native Stellar asset"}
+                {balance.issuer ? truncateMiddle(balance.issuer) : "Native Stellar asset in the moon wallet"}
               </p>
             </div>
             <Badge tone="info">{balance.amount}</Badge>

@@ -10,10 +10,10 @@ interface StatusMessageProps {
 }
 
 const statusStyles: Record<StatusType, string> = {
-  success: "border-stellar-green/30 bg-stellar-green/10 text-stellar-green",
-  error: "border-red-400/30 bg-red-500/10 text-red-200",
-  warning: "border-stellar-amber/30 bg-stellar-amber/10 text-stellar-amber",
-  info: "border-stellar-cyan/30 bg-stellar-cyan/10 text-stellar-cyan"
+  success: "border-[#62d79b]/32 bg-[#163223] text-[#9ff0c3]",
+  error: "border-[#f8614a]/36 bg-[#351817] text-[#ffb3a8]",
+  warning: "border-[#f6c85f]/36 bg-[#352a14] text-[#ffe097]",
+  info: "border-[#54d2ff]/36 bg-[#10283a] text-[#8fe3ff]"
 };
 
 const icons = {
@@ -27,10 +27,12 @@ export function StatusMessage({ type, title, description }: StatusMessageProps) 
   const Icon = icons[type];
 
   return (
-    <div className={cn("flex gap-3 rounded-lg border p-4", statusStyles[type])}>
-      <Icon className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
+    <div className={cn("flex gap-3 rounded-[1rem] border p-4 shadow-[4px_4px_0_rgba(255,241,204,0.08)]", statusStyles[type])}>
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#fff1cc]/12">
+        <Icon className="h-5 w-5" aria-hidden />
+      </span>
       <div>
-        <p className="text-sm font-semibold">{title}</p>
+        <p className="text-sm font-extrabold">{title}</p>
         {description ? <p className="mt-1 text-sm text-slate-300">{description}</p> : null}
       </div>
     </div>

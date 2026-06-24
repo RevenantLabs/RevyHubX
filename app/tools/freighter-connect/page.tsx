@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { CharacterPanel } from "@/components/ui/CharacterPanel";
 import { StatusMessage } from "@/components/ui/StatusMessage";
 
 declare global {
@@ -17,7 +18,7 @@ declare global {
 export default function FreighterConnectPage() {
   const [available, setAvailable] = useState(false);
   const [publicKey, setPublicKey] = useState("");
-  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "warning" | "error", text: "Detecting Freighter in this browser." });
+  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "warning" | "error", text: "The wallet mascot is listening for Freighter in this browser." });
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -26,8 +27,8 @@ export default function FreighterConnectPage() {
       setMessage({
         type: detected ? "info" : "warning",
         text: detected
-          ? "Freighter appears to be installed. You can request the public key."
-          : "Freighter was not detected. Install the extension to try wallet connection examples."
+          ? "The wallet mascot spotted Freighter. You can request the public key."
+          : "The wallet mascot could not find Freighter. Install the extension to try connection examples."
       });
     }, 0);
 
@@ -36,14 +37,14 @@ export default function FreighterConnectPage() {
 
   async function connect() {
     if (!window.freighterApi?.getPublicKey) {
-      setMessage({ type: "warning", text: "Freighter API is not available in this browser." });
+      setMessage({ type: "warning", text: "The wallet mascot cannot reach the Freighter API in this browser." });
       return;
     }
 
     try {
       const key = await window.freighterApi.getPublicKey();
       setPublicKey(key);
-      setMessage({ type: "success", text: "Freighter public key connected." });
+      setMessage({ type: "success", text: "The wallet mascot received the Freighter public key." });
     } catch {
       setMessage({ type: "error", text: "Connection request was rejected or could not be completed." });
     }
@@ -51,17 +52,19 @@ export default function FreighterConnectPage() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-white">Freighter Connect</h1>
-        <p className="mt-2 text-slate-400">A minimal wallet detection and public key connection example.</p>
-      </div>
+      <CharacterPanel
+        tone="wallet"
+        eyebrow="Wallet mascot"
+        title="Freighter Connect"
+        description="The wallet mascot watches for Freighter, asks for a public key, and explains what happened without asking for secrets."
+      />
       <Card className="space-y-5">
         <Button type="button" onClick={connect} disabled={!available}>
-          Connect Freighter Wallet
+          Ask wallet mascot to connect
         </Button>
         {publicKey ? (
-          <div className="rounded-lg border border-white/10 bg-surface-950 p-4">
-            <p className="text-xs uppercase tracking-wide text-slate-500">Connected public key</p>
+          <div className="rounded-[1rem] border border-[#fff1cc]/14 bg-[#0b0d16] p-4">
+            <p className="text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Connected public key</p>
             <p className="mt-2 break-all text-sm text-slate-200">{publicKey}</p>
           </div>
         ) : null}
@@ -72,10 +75,10 @@ export default function FreighterConnectPage() {
           Install Freighter
         </a>
       </Card>
-      <StatusMessage type={message.type} title="Wallet status" description={message.text} />
+      <StatusMessage type={message.type} title="Wallet mascot status" description={message.text} />
       <StatusMessage
         type="info"
-        title="Contributor TODO"
+        title="Mascot training TODO"
         description="Future issues can add network detection, sign transaction demo, and a send test payment demo."
       />
       {/* TODO(issue): Improve Freighter connection handling and network mismatch warnings. */}

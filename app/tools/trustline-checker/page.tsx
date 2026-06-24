@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { CharacterPanel } from "@/components/ui/CharacterPanel";
 import { Input } from "@/components/ui/Input";
 import { StatusMessage } from "@/components/ui/StatusMessage";
 import { AddressInput } from "@/components/stellar/AddressInput";
@@ -13,7 +14,7 @@ export default function TrustlineCheckerPage() {
   const [assetCode, setAssetCode] = useState("");
   const [issuer, setIssuer] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "warning" | "error", text: "Enter an account, asset code, and issuer to check a trustline." });
+  const [message, setMessage] = useState({ type: "info" as "info" | "success" | "warning" | "error", text: "The trust inspector needs an account, asset code, and issuer to look for the handshake." });
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -31,10 +32,12 @@ export default function TrustlineCheckerPage() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-white">Trustline Checker</h1>
-        <p className="mt-2 text-slate-400">Check whether a testnet account holds a trustline for an issued asset.</p>
-      </div>
+      <CharacterPanel
+        tone="trust"
+        eyebrow="Trust inspector"
+        title="Trustline Checker"
+        description="The inspector looks for a friendly handshake between an account and an issued asset on Stellar testnet."
+      />
       <Card>
         <form onSubmit={handleSubmit} className="space-y-5">
           <AddressInput value={account} onChange={setAccount} label="Account address" />
@@ -44,11 +47,11 @@ export default function TrustlineCheckerPage() {
           </label>
           <AddressInput value={issuer} onChange={setIssuer} label="Issuer address" />
           <Button type="submit" disabled={loading}>
-            {loading ? "Checking..." : "Check trustline"}
+            {loading ? "Inspecting..." : "Inspect handshake"}
           </Button>
         </form>
       </Card>
-      <StatusMessage type={message.type} title="Trustline status" description={message.text} />
+      <StatusMessage type={message.type} title="Inspector report" description={message.text} />
     </div>
   );
 }

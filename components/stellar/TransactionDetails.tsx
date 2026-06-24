@@ -29,7 +29,7 @@ export function TransactionDetails({ transaction }: { transaction: TransactionSu
           {transaction.successful ? "Successful" : "Failed"}
         </Badge>
       </div>
-      <dl className="divide-y divide-white/10 rounded-lg border border-white/10 bg-surface-950">
+      <dl className="divide-y divide-[#fff1cc]/10 rounded-[1rem] border border-[#fff1cc]/14 bg-[#0b0d16]">
         {rows.map(([label, value]) => (
           <div key={label} className="grid gap-1 px-4 py-3 sm:grid-cols-3">
             <dt className="text-xs uppercase tracking-wide text-slate-500">{label}</dt>

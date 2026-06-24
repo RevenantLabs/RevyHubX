@@ -9,9 +9,9 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-72 shrink-0 border-r border-white/10 bg-surface-950/44 lg:block">
+    <aside className="hidden w-72 shrink-0 border-r border-[#fff1cc]/12 bg-[#0c0e18]/68 lg:block">
       <nav className="sticky top-16 space-y-2 p-4">
-        <p className="px-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Tools</p>
+        <p className="px-3 text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Helper cast</p>
         {tools.map((tool) => {
           const Icon = tool.icon;
           const active = pathname === tool.href;
@@ -21,8 +21,10 @@ export function Sidebar() {
               key={tool.href}
               href={tool.href}
               className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm transition",
-                active ? "bg-stellar-cyan/14 text-stellar-cyan" : "text-slate-300 hover:bg-white/5 hover:text-white"
+                "flex items-center gap-3 rounded-[1rem] px-3 py-2.5 text-sm font-semibold transition",
+                active
+                  ? "bg-[#fff1cc] text-surface-950 shadow-[4px_4px_0_#f8614a]"
+                  : "text-slate-300 hover:bg-[#fff1cc]/8 hover:text-white"
               )}
             >
               <Icon className="h-4 w-4" aria-hidden />

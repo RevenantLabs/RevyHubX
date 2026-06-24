@@ -16,7 +16,7 @@ export default function HomePage() {
             Stellar DevTools Hub, with tools that behave like helpful characters.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            A lightweight dashboard for validating addresses, inspecting testnet
+            A character-led workspace for validating addresses, inspecting testnet
             balances, generating payment QR codes, checking trustlines, and
             exploring developer workflows through a playful cast of human-like
             Stellar mascots.
@@ -99,9 +99,9 @@ export default function HomePage() {
       <section>
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-semibold text-white">Developer tools</h2>
+            <h2 className="text-2xl font-black text-white">Helper cast</h2>
             <p className="mt-2 text-sm text-slate-400">
-              Working modules are demo-ready; MVP pages include clear extension points.
+              Each tool has a role, a mood, and a clear task so the Stellar workflow feels visual and memorable.
             </p>
           </div>
         </div>

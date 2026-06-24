@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Card } from "@/components/ui/Card";
+import { CharacterPanel } from "@/components/ui/CharacterPanel";
 import { StatusMessage } from "@/components/ui/StatusMessage";
 import { AddressInput } from "@/components/stellar/AddressInput";
 import { validatePublicKey } from "@/lib/stellar/validateAddress";
@@ -13,12 +14,12 @@ export default function AddressValidatorPage() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-white">Address Validator</h1>
-        <p className="mt-2 text-slate-400">
-          Validate Stellar public addresses locally with the Stellar SDK StrKey checksum rules.
-        </p>
-      </div>
+      <CharacterPanel
+        tone="star"
+        eyebrow="Star clerk"
+        title="Address Validator"
+        description="The star clerk checks each public address like a name badge, using Stellar checksum rules while keeping secret keys out of the room."
+      />
       <Card className="space-y-5">
         <AddressInput value={address} onChange={setAddress} />
         {hasInput ? (
@@ -30,7 +31,7 @@ export default function AddressValidatorPage() {
         ) : (
           <StatusMessage
             type="info"
-            title="Enter a public key"
+            title="Hand the badge to the star clerk"
             description="Stellar public keys normally start with G. Never enter a secret key or seed phrase."
           />
         )}

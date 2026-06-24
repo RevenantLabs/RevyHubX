@@ -12,7 +12,7 @@ export function AppHeader() {
           </span>
           <span>
             <span className="block text-sm font-semibold text-white">Stellar DevTools Hub</span>
-            <span className="block text-xs text-[#f7deb0]">Character-led testnet tools</span>
+            <span className="block text-xs text-[#f7deb0]">Anthropomorphic testnet helpers</span>
           </span>
         </Link>
         <div className="flex items-center gap-3">

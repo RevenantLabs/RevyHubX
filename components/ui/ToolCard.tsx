@@ -35,7 +35,7 @@ export function ToolCard({ title, description, character, href, status, icon: Ic
           {character}
         </p>
         <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stellar-cyan">
-          Open tool
+          Meet helper
           <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden />
         </span>
       </Card>
