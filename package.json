@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "issues:create": "node scripts/create-github-issues.mjs",
+    "issues:dry-run": "node scripts/create-github-issues.mjs --dry-run"
   },
   "dependencies": {
     "@stellar/stellar-sdk": "^13.3.0",

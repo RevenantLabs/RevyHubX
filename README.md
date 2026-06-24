@@ -90,3 +90,15 @@ See [docs/ROADMAP.md](./docs/ROADMAP.md).
 ## Issue Ideas
 
 See [docs/ISSUES.md](./docs/ISSUES.md) for contributor-ready GitHub issue ideas.
+
+## Create GitHub Issues
+
+Use GitHub CLI to publish every roadmap item from `docs/ISSUES.md` into the repository Issues tab:
+
+```bash
+gh auth login
+npm run issues:dry-run
+npm run issues:create
+```
+
+The script skips issues with titles that already exist and creates labels such as `area:frontend` and `difficulty:advanced`.
