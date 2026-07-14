@@ -115,28 +115,28 @@ export default function FreighterConnectPage() {
           Ask wallet mascot to connect
         </Button>
         {publicKey ? (
-          <div className="rounded-[1rem] border border-[#fff1cc]/14 bg-[#0b0d16] p-4">
-            <p className="text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Connected public key</p>
-            <p className="mt-2 break-all text-sm text-slate-200">{publicKey}</p>
+          <div className="rounded-lg border border-white/80 bg-white/68 p-4">
+            <p className="text-xs font-extrabold uppercase tracking-wide text-[#9a6754]">Connected public key</p>
+            <p className="mt-2 break-all text-sm text-[#29364d]">{publicKey}</p>
           </div>
         ) : null}
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-[1rem] border border-white/10 bg-white/5 p-4">
-            <p className="text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Extension</p>
-            <p className="mt-2 text-sm text-slate-200">{available ? "Detected" : "Not detected"}</p>
+          <div className="rounded-lg border border-white/80 bg-white/60 p-4">
+            <p className="text-xs font-extrabold uppercase tracking-wide text-[#9a6754]">Extension</p>
+            <p className="mt-2 text-sm text-[#29364d]">{available ? "Detected" : "Not detected"}</p>
           </div>
-          <div className="rounded-[1rem] border border-white/10 bg-white/5 p-4">
-            <p className="text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Permission</p>
-            <p className="mt-2 text-sm text-slate-200">{connected ? "Allowed" : "Not allowed"}</p>
+          <div className="rounded-lg border border-white/80 bg-white/60 p-4">
+            <p className="text-xs font-extrabold uppercase tracking-wide text-[#9a6754]">Permission</p>
+            <p className="mt-2 text-sm text-[#29364d]">{connected ? "Allowed" : "Not allowed"}</p>
           </div>
-          <div className="rounded-[1rem] border border-white/10 bg-white/5 p-4">
-            <p className="text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Wallet network</p>
-            <p className="mt-2 text-sm text-slate-200">{walletNetwork || "Unknown"}</p>
+          <div className="rounded-lg border border-white/80 bg-white/60 p-4">
+            <p className="text-xs font-extrabold uppercase tracking-wide text-[#9a6754]">Wallet network</p>
+            <p className="mt-2 text-sm text-[#29364d]">{walletNetwork || "Unknown"}</p>
           </div>
         </div>
         <a
           href="https://www.freighter.app/"
-          className="inline-flex text-sm font-semibold text-stellar-cyan hover:text-cyan-200"
+          className="inline-flex text-sm font-semibold text-[#178fb5] hover:text-[#0f6d8c]"
         >
           Install Freighter
         </a>

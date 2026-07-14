@@ -12,21 +12,21 @@ interface CharacterPanelProps {
 }
 
 const toneStyles: Record<CharacterTone, { face: string; hat: string; shadow: string }> = {
-  star: { face: "bg-[#fff1cc]", hat: "bg-[#54d2ff]", shadow: "shadow-[7px_7px_0_#f8614a]" },
-  moon: { face: "bg-[#f7deb0]", hat: "bg-[#8b5cf6]", shadow: "shadow-[7px_7px_0_rgba(84,210,255,0.45)]" },
-  rocket: { face: "bg-[#54d2ff]", hat: "bg-[#f8614a]", shadow: "shadow-[7px_7px_0_#fff1cc]" },
-  faucet: { face: "bg-[#62d79b]", hat: "bg-[#54d2ff]", shadow: "shadow-[7px_7px_0_#f6c85f]" },
-  detective: { face: "bg-[#f6c85f]", hat: "bg-[#1a2034]", shadow: "shadow-[7px_7px_0_#8b5cf6]" },
-  wallet: { face: "bg-[#8b5cf6]", hat: "bg-[#fff1cc]", shadow: "shadow-[7px_7px_0_#54d2ff]" },
-  trust: { face: "bg-[#f8614a]", hat: "bg-[#fff1cc]", shadow: "shadow-[7px_7px_0_#62d79b]" }
+  star: { face: "bg-[#fff7b8]", hat: "bg-[#8edcf4]", shadow: "shadow-[7px_7px_0_#ff8b7a]" },
+  moon: { face: "bg-[#e9ddff]", hat: "bg-[#7bdcb5]", shadow: "shadow-[7px_7px_0_rgba(111,212,255,0.5)]" },
+  rocket: { face: "bg-[#d9f4ff]", hat: "bg-[#ff8b7a]", shadow: "shadow-[7px_7px_0_#ffe2d7]" },
+  faucet: { face: "bg-[#dff8ee]", hat: "bg-[#8edcf4]", shadow: "shadow-[7px_7px_0_#ffd66b]" },
+  detective: { face: "bg-[#ffe4a8]", hat: "bg-[#5b4b8a]", shadow: "shadow-[7px_7px_0_#c7b9f3]" },
+  wallet: { face: "bg-[#e9ddff]", hat: "bg-[#fff7b8]", shadow: "shadow-[7px_7px_0_#8edcf4]" },
+  trust: { face: "bg-[#ffd1c6]", hat: "bg-[#fff7b8]", shadow: "shadow-[7px_7px_0_#7bdcb5]" }
 };
 
 export function CharacterPanel({ tone, eyebrow, title, description, children }: CharacterPanelProps) {
   const styles = toneStyles[tone];
 
   return (
-    <div className="grid gap-5 rounded-lg border border-[#fff1cc]/18 bg-[linear-gradient(135deg,rgba(28,34,51,0.96),rgba(11,13,22,0.95))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.32)] sm:grid-cols-[auto_1fr] sm:items-center">
-      <div className={cn("relative h-24 w-24 rounded-xl border-4 border-[#0b0d16]", styles.face, styles.shadow)}>
+    <div className="grid gap-5 rounded-lg border border-white/85 bg-white/74 p-5 shadow-[0_18px_50px_rgba(84,102,136,0.16)] backdrop-blur-xl sm:grid-cols-[auto_1fr] sm:items-center">
+      <div className={cn("relative h-24 w-24 rounded-xl border-4 border-white", styles.face, styles.shadow)}>
         <span className={cn("absolute -top-3 left-5 h-6 w-14 rounded-t-full", styles.hat)} />
         <span className="absolute left-6 top-9 h-3 w-3 rounded-full bg-[#080912]" />
         <span className="absolute right-6 top-9 h-3 w-3 rounded-full bg-[#080912]" />
@@ -34,9 +34,9 @@ export function CharacterPanel({ tone, eyebrow, title, description, children }: 
         <span className="absolute -right-2 bottom-5 h-6 w-3 rounded-full bg-[#080912]" />
       </div>
       <div>
-        <p className="text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">{eyebrow}</p>
-        <h1 className="mt-2 text-3xl font-black tracking-normal text-white">{title}</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">{description}</p>
+        <p className="text-xs font-extrabold uppercase tracking-wide text-[#9a6754]">{eyebrow}</p>
+        <h1 className="mt-2 text-3xl font-black tracking-normal text-[#172033]">{title}</h1>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-[#5d6b82]">{description}</p>
         {children ? <div className="mt-4">{children}</div> : null}
       </div>
     </div>

@@ -15,7 +15,7 @@ export function AddressInput({
 }: AddressInputProps) {
   return (
     <label className="block space-y-2">
-      <span className="text-sm font-medium text-slate-200">{label}</span>
+      <span className="text-sm font-medium text-[#29364d]">{label}</span>
       <Input
         value={value}
         onChange={(event) => onChange(event.target.value)}

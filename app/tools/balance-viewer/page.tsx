@@ -63,7 +63,7 @@ export default function BalanceViewerPage() {
           action={
             <Link
               href="/tools/testnet-faucet"
-              className="inline-flex rounded-md border border-[#54d2ff]/35 px-3 py-2 text-sm font-extrabold text-stellar-cyan hover:bg-[#54d2ff]/10"
+              className="inline-flex rounded-md border border-[#82cbe3]/80 bg-white/60 px-3 py-2 text-sm font-extrabold text-[#178fb5] hover:bg-[#e0f6ff]"
             >
               Open Testnet Faucet Helper
             </Link>

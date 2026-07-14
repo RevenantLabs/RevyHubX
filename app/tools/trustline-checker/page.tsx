@@ -45,7 +45,7 @@ export default function TrustlineCheckerPage() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <AddressInput value={account} onChange={setAccount} label="Account address" />
           <label className="block space-y-2">
-            <span className="text-sm font-medium text-slate-200">Asset code</span>
+            <span className="text-sm font-medium text-[#29364d]">Asset code</span>
             <Input value={assetCode} onChange={(event) => setAssetCode(event.target.value)} placeholder="USDC" />
           </label>
           <AddressInput value={issuer} onChange={setIssuer} label="Issuer address" />
@@ -63,7 +63,7 @@ export default function TrustlineCheckerPage() {
           action={
             <Link
               href="/tools/testnet-faucet"
-              className="inline-flex rounded-md border border-[#54d2ff]/35 px-3 py-2 text-sm font-extrabold text-stellar-cyan hover:bg-[#54d2ff]/10"
+              className="inline-flex rounded-md border border-[#82cbe3]/80 bg-white/60 px-3 py-2 text-sm font-extrabold text-[#178fb5] hover:bg-[#e0f6ff]"
             >
               Open Testnet Faucet Helper
             </Link>

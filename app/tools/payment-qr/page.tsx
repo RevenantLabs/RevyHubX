@@ -62,15 +62,15 @@ export default function PaymentQrPage() {
           <form onSubmit={handleGenerate} className="space-y-5">
             <AddressInput value={destination} onChange={setDestination} label="Destination address" />
             <label className="block space-y-2">
-              <span className="text-sm font-medium text-slate-200">Amount</span>
+              <span className="text-sm font-medium text-[#29364d]">Amount</span>
               <Input value={amount} onChange={(event) => setAmount(event.target.value)} placeholder="10" inputMode="decimal" />
             </label>
             <label className="block space-y-2">
-              <span className="text-sm font-medium text-slate-200">Asset</span>
+              <span className="text-sm font-medium text-[#29364d]">Asset</span>
               <select
                 value={asset}
                 onChange={(event) => setAsset(event.target.value as "XLM" | "ISSUED")}
-                className="min-h-12 w-full rounded-[0.95rem] border border-[#fff1cc]/16 bg-[#0b0d16] px-4 text-sm text-white outline-none focus:border-[#fff1cc]/70 focus:ring-2 focus:ring-[#f8614a]/28"
+                className="min-h-12 w-full rounded-md border border-[#c7d6e8] bg-white/78 px-4 text-sm text-[#172033] outline-none focus:border-[#47a8c7] focus:ring-2 focus:ring-[#8edcf4]/35"
               >
                 <option value="XLM">XLM</option>
                 <option value="ISSUED">Issued asset</option>
@@ -79,14 +79,14 @@ export default function PaymentQrPage() {
             {asset === "ISSUED" ? (
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="block space-y-2">
-                  <span className="text-sm font-medium text-slate-200">Asset code</span>
+                  <span className="text-sm font-medium text-[#29364d]">Asset code</span>
                   <Input value={assetCode} onChange={(event) => setAssetCode(event.target.value)} placeholder="USDC" />
                 </label>
                 <AddressInput value={assetIssuer} onChange={setAssetIssuer} label="Asset issuer" />
               </div>
             ) : null}
             <label className="block space-y-2">
-              <span className="text-sm font-medium text-slate-200">Memo optional</span>
+              <span className="text-sm font-medium text-[#29364d]">Memo optional</span>
               <Input value={memo} onChange={(event) => setMemo(event.target.value)} placeholder="Invoice 1001" />
             </label>
             <Button type="submit">Ask rocket to draw QR</Button>
@@ -97,7 +97,7 @@ export default function PaymentQrPage() {
           {qr ? <QRPreview dataUrl={qr} /> : null}
           {uri ? (
             <Card className="space-y-3">
-              <p className="break-all text-xs text-slate-300">{uri}</p>
+              <p className="break-all text-xs text-[#4e5c73]">{uri}</p>
               <Button type="button" variant="secondary" onClick={copyUri}>
                 Copy URI
               </Button>

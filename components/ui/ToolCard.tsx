@@ -23,19 +23,19 @@ export function ToolCard({ title, description, character, href, status, icon: Ic
   return (
     <Link href={href} className="group block">
       {/* TODO(issue #1): Extend tool cards with richer status metadata, grouped categories, and accessible hover/focus states. */}
-      <Card className="h-full overflow-hidden transition hover:-translate-y-0.5 hover:border-stellar-cyan/45 hover:shadow-[0_0_0_1px_rgba(84,210,255,0.12),6px_6px_0_rgba(248,97,74,0.26),0_26px_70px_rgba(0,0,0,0.45)]">
+      <Card className="h-full overflow-hidden transition hover:-translate-y-0.5 hover:border-[#82cbe3]/80 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.82),6px_6px_0_rgba(255,139,122,0.28),0_26px_70px_rgba(84,102,136,0.2)]">
         <div className="flex items-start justify-between gap-4">
-          <span className="grid h-12 w-12 place-items-center rounded-lg border border-stellar-cyan/28 bg-stellar-cyan/12 text-stellar-cyan shadow-[5px_5px_0_rgba(248,97,74,0.25)]">
+          <span className="grid h-12 w-12 place-items-center rounded-lg border border-[#82cbe3]/70 bg-[#e0f6ff] text-[#178fb5] shadow-[5px_5px_0_rgba(255,139,122,0.28)]">
             <Icon className="h-5 w-5" aria-hidden />
           </span>
           <Badge tone={statusTone[status]}>{status}</Badge>
         </div>
-        <h3 className="mt-5 text-lg font-semibold text-white">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-slate-400">{description}</p>
-        <p className="mt-4 rounded-md border border-white/10 bg-[#fff1cc]/8 px-3 py-2 text-xs leading-5 text-[#f7deb0]">
+        <h3 className="mt-5 text-lg font-semibold text-[#172033]">{title}</h3>
+        <p className="mt-2 text-sm leading-6 text-[#5d6b82]">{description}</p>
+        <p className="mt-4 rounded-md border border-[#ffd1c6]/80 bg-[#fff7f1] px-3 py-2 text-xs font-semibold leading-5 text-[#8a5a4c]">
           {character}
         </p>
-        <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stellar-cyan">
+        <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#178fb5]">
           Meet helper
           <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden />
         </span>

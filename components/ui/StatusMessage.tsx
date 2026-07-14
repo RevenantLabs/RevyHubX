@@ -11,10 +11,10 @@ interface StatusMessageProps {
 }
 
 const statusStyles: Record<StatusType, string> = {
-  success: "border-[#62d79b]/32 bg-[#163223] text-[#9ff0c3]",
-  error: "border-[#f8614a]/36 bg-[#351817] text-[#ffb3a8]",
-  warning: "border-[#f6c85f]/36 bg-[#352a14] text-[#ffe097]",
-  info: "border-[#54d2ff]/36 bg-[#10283a] text-[#8fe3ff]"
+  success: "border-[#70c7a7]/70 bg-[#e1f8ef] text-[#17664b]",
+  error: "border-[#ff9a8b]/75 bg-[#fff0ee] text-[#9f342d]",
+  warning: "border-[#ffc3a8]/80 bg-[#fff2e9] text-[#9a513f]",
+  info: "border-[#82cbe3]/70 bg-[#e0f6ff] text-[#146783]"
 };
 
 const icons = {
@@ -29,13 +29,13 @@ export function StatusMessage({ type, title, description, action }: StatusMessag
 
   return (
     // TODO(issue #6): Add optional actions, ARIA live-region behavior, and reusable test coverage for async tool feedback.
-    <div className={cn("flex gap-3 rounded-[1rem] border p-4 shadow-[4px_4px_0_rgba(255,241,204,0.08)]", statusStyles[type])}>
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#fff1cc]/12">
+    <div className={cn("flex gap-3 rounded-lg border p-4 shadow-[4px_4px_0_rgba(255,139,122,0.12)]", statusStyles[type])}>
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/60">
         <Icon className="h-5 w-5" aria-hidden />
       </span>
       <div className="min-w-0 flex-1">
         <p className="text-sm font-extrabold">{title}</p>
-        {description ? <p className="mt-1 text-sm text-slate-300">{description}</p> : null}
+        {description ? <p className="mt-1 text-sm text-[#4e5c73]">{description}</p> : null}
         {action ? <div className="mt-3">{action}</div> : null}
       </div>
     </div>

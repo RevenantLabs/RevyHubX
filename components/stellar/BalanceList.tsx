@@ -14,12 +14,12 @@ export function BalanceList({ balances }: { balances: DisplayBalance[] }) {
       {balances.map((balance) => (
         <div
           key={`${balance.assetCode}-${balance.issuer ?? "native"}`}
-          className="rounded-[1rem] border border-[#fff1cc]/14 bg-[#0b0d16] p-4 shadow-[4px_4px_0_rgba(84,210,255,0.12)]"
+          className="rounded-lg border border-white/80 bg-white/68 p-4 shadow-[4px_4px_0_rgba(142,220,244,0.22)]"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <p className="text-sm font-semibold text-white">{balance.assetCode}</p>
-              <p className="mt-1 text-xs text-slate-500">
+              <p className="text-sm font-semibold text-[#172033]">{balance.assetCode}</p>
+              <p className="mt-1 text-xs text-[#68758a]">
                 {balance.issuer ? (
                   <CopyableValue label={`${balance.assetCode} issuer`} value={balance.issuer} />
                 ) : (

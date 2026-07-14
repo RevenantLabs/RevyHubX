@@ -10,10 +10,10 @@ export function AppHeader() {
   const { network, setNetwork } = useNetwork();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[#fff1cc]/16 bg-[#080a10]/92 shadow-[0_14px_34px_rgba(0,0,0,0.32)] backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-white/70 bg-white/75 shadow-[0_14px_38px_rgba(86,103,140,0.16)] backdrop-blur-xl">
       <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span className="relative h-12 w-12 overflow-hidden rounded-lg border border-[#fff1cc]/70 bg-[#fff1cc] shadow-[5px_5px_0_#f8614a,0_0_30px_rgba(84,210,255,0.22)]">
+          <span className="relative h-12 w-12 overflow-hidden rounded-lg border border-white bg-[#fff7f1] shadow-[5px_5px_0_#ff8b7a,0_0_30px_rgba(111,212,255,0.28)]">
             <Image
               src="/devtool-profile.png"
               alt="RevyHubX profile character"
@@ -24,24 +24,24 @@ export function AppHeader() {
             />
           </span>
           <span>
-            <span className="block text-sm font-semibold text-white">RevyHubX</span>
-            <span className="block text-xs text-[#f7deb0]">Anthropomorphic testnet helpers</span>
+            <span className="block text-sm font-semibold text-[#172033]">RevyHubX</span>
+            <span className="block text-xs font-semibold text-[#7a5b45]">Anthropomorphic testnet helpers</span>
           </span>
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
-          <label className="inline-flex min-h-10 items-center gap-2 rounded-md border border-[#fff1cc]/18 bg-[#121723] px-3 text-sm font-semibold text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-            <Network className="h-4 w-4 text-stellar-cyan" aria-hidden />
+          <label className="inline-flex min-h-10 items-center gap-2 rounded-md border border-[#7dbcd2]/45 bg-white/75 px-3 text-sm font-semibold text-[#29364d] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+            <Network className="h-4 w-4 text-[#178fb5]" aria-hidden />
             <span className="sr-only sm:not-sr-only">Network</span>
             <select
               value={network}
               onChange={(event) => setNetwork(event.target.value === "mainnet" ? "mainnet" : "testnet")}
-              className="bg-transparent text-sm font-extrabold uppercase text-white outline-none"
+              className="bg-transparent text-sm font-extrabold uppercase text-[#172033] outline-none"
               aria-label="Select Stellar network"
             >
-              <option className="bg-[#0b0d16]" value="testnet">
+              <option className="bg-white" value="testnet">
                 Testnet
               </option>
-              <option className="bg-[#0b0d16]" value="mainnet">
+              <option className="bg-white" value="mainnet">
                 Mainnet
               </option>
             </select>
@@ -49,7 +49,7 @@ export function AppHeader() {
           <Badge tone={network === "testnet" ? "info" : "warning"}>{network}</Badge>
           <a
             href="https://github.com/RevenantLabs/RevyHubX"
-            className="hidden items-center gap-2 rounded-md border border-[#fff1cc]/16 bg-[#fff1cc]/7 px-3 py-2 text-sm text-slate-300 transition hover:border-stellar-cyan/45 hover:bg-stellar-cyan/10 hover:text-white sm:inline-flex"
+            className="hidden items-center gap-2 rounded-md border border-[#c7b9f3]/65 bg-white/60 px-3 py-2 text-sm font-semibold text-[#29364d] transition hover:border-[#ff8b7a]/70 hover:bg-[#fff7f1] sm:inline-flex"
           >
             <Github className="h-4 w-4" aria-hidden />
             GitHub

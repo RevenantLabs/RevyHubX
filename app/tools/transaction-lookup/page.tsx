@@ -45,7 +45,7 @@ export default function TransactionLookupPage() {
       <Card>
         <form onSubmit={handleSubmit} className="space-y-5">
           <label className="block space-y-2">
-            <span className="text-sm font-medium text-slate-200">Transaction hash</span>
+            <span className="text-sm font-medium text-[#29364d]">Transaction hash</span>
             <Input value={hash} onChange={(event) => setHash(event.target.value)} placeholder="64 character hash" spellCheck={false} />
           </label>
           <Button type="submit" disabled={loading}>

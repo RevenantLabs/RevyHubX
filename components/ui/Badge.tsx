@@ -8,10 +8,10 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const tones: Record<BadgeTone, string> = {
-  success: "border-[#62d79b]/45 bg-[#62d79b]/12 text-[#9ff0c3]",
-  info: "border-[#54d2ff]/45 bg-[#54d2ff]/12 text-[#8fe3ff]",
-  warning: "border-[#f6c85f]/45 bg-[#f6c85f]/12 text-[#ffe097]",
-  muted: "border-[#fff1cc]/20 bg-[#fff1cc]/8 text-[#f7deb0]"
+  success: "border-[#70c7a7]/70 bg-[#dff8ee] text-[#17664b]",
+  info: "border-[#82cbe3]/70 bg-[#e0f6ff] text-[#146783]",
+  warning: "border-[#ffc3a8]/80 bg-[#fff0e8] text-[#9a513f]",
+  muted: "border-[#c7b9f3]/70 bg-[#f1edff] text-[#5b4b8a]"
 };
 
 export function Badge({ className, tone = "muted", ...props }: BadgeProps) {
