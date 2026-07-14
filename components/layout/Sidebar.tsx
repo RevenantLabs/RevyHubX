@@ -9,7 +9,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-72 shrink-0 border-r border-[#fff1cc]/12 bg-[#0c0e18]/68 lg:block">
+    <aside className="hidden w-72 shrink-0 border-r border-[#fff1cc]/12 bg-[#080a10]/72 lg:block">
       {/* TODO(issue #15): Replace the desktop-only sidebar with a responsive navigation system and mobile menu state. */}
       <nav className="sticky top-16 space-y-2 p-4">
         <p className="px-3 text-xs font-extrabold uppercase tracking-wide text-[#f7deb0]">Helper cast</p>
@@ -24,8 +24,8 @@ export function Sidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-[1rem] px-3 py-2.5 text-sm font-semibold transition",
                 active
-                  ? "bg-[#fff1cc] text-surface-950 shadow-[4px_4px_0_#f8614a]"
-                  : "text-slate-300 hover:bg-[#fff1cc]/8 hover:text-white"
+                  ? "bg-[#fff1cc] text-surface-950 shadow-[4px_4px_0_#f8614a,0_0_26px_rgba(84,210,255,0.18)]"
+                  : "border border-transparent text-slate-300 hover:border-[#fff1cc]/12 hover:bg-[#fff1cc]/8 hover:text-white"
               )}
             >
               <Icon className="h-4 w-4" aria-hidden />

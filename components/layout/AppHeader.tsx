@@ -10,10 +10,10 @@ export function AppHeader() {
   const { network, setNetwork } = useNetwork();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[#fff1cc]/15 bg-surface-950/88 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-[#fff1cc]/16 bg-[#080a10]/92 shadow-[0_14px_34px_rgba(0,0,0,0.32)] backdrop-blur">
       <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span className="relative h-12 w-12 overflow-hidden rounded-[1rem] border border-[#fff1cc]/50 bg-[#fff1cc] shadow-[4px_4px_0_#f8614a]">
+          <span className="relative h-12 w-12 overflow-hidden rounded-lg border border-[#fff1cc]/70 bg-[#fff1cc] shadow-[5px_5px_0_#f8614a,0_0_30px_rgba(84,210,255,0.22)]">
             <Image
               src="/devtool-profile.png"
               alt="RevyHubX profile character"
@@ -29,7 +29,7 @@ export function AppHeader() {
           </span>
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
-          <label className="inline-flex min-h-10 items-center gap-2 rounded-md border border-white/10 bg-[#0b0d16] px-3 text-sm font-semibold text-slate-200">
+          <label className="inline-flex min-h-10 items-center gap-2 rounded-md border border-[#fff1cc]/18 bg-[#121723] px-3 text-sm font-semibold text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
             <Network className="h-4 w-4 text-stellar-cyan" aria-hidden />
             <span className="sr-only sm:not-sr-only">Network</span>
             <select
@@ -49,7 +49,7 @@ export function AppHeader() {
           <Badge tone={network === "testnet" ? "info" : "warning"}>{network}</Badge>
           <a
             href="https://github.com/RevenantLabs/RevyHubX"
-            className="hidden items-center gap-2 rounded-md border border-white/10 px-3 py-2 text-sm text-slate-300 transition hover:border-stellar-cyan/40 hover:text-white sm:inline-flex"
+            className="hidden items-center gap-2 rounded-md border border-[#fff1cc]/16 bg-[#fff1cc]/7 px-3 py-2 text-sm text-slate-300 transition hover:border-stellar-cyan/45 hover:bg-stellar-cyan/10 hover:text-white sm:inline-flex"
           >
             <Github className="h-4 w-4" aria-hidden />
             GitHub

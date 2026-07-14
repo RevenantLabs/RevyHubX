@@ -25,8 +25,8 @@ export function CharacterPanel({ tone, eyebrow, title, description, children }: 
   const styles = toneStyles[tone];
 
   return (
-    <div className="grid gap-5 rounded-[1.5rem] border border-[#fff1cc]/18 bg-[#121520]/88 p-5 shadow-[0_18px_50px_rgba(0,0,0,0.25)] sm:grid-cols-[auto_1fr] sm:items-center">
-      <div className={cn("relative h-24 w-24 rounded-[2rem] border-4 border-[#0b0d16]", styles.face, styles.shadow)}>
+    <div className="grid gap-5 rounded-lg border border-[#fff1cc]/18 bg-[linear-gradient(135deg,rgba(28,34,51,0.96),rgba(11,13,22,0.95))] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.32)] sm:grid-cols-[auto_1fr] sm:items-center">
+      <div className={cn("relative h-24 w-24 rounded-xl border-4 border-[#0b0d16]", styles.face, styles.shadow)}>
         <span className={cn("absolute -top-3 left-5 h-6 w-14 rounded-t-full", styles.hat)} />
         <span className="absolute left-6 top-9 h-3 w-3 rounded-full bg-[#080912]" />
         <span className="absolute right-6 top-9 h-3 w-3 rounded-full bg-[#080912]" />

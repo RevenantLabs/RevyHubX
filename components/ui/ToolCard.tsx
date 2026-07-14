@@ -23,9 +23,9 @@ export function ToolCard({ title, description, character, href, status, icon: Ic
   return (
     <Link href={href} className="group block">
       {/* TODO(issue #1): Extend tool cards with richer status metadata, grouped categories, and accessible hover/focus states. */}
-      <Card className="h-full overflow-hidden transition hover:-translate-y-0.5 hover:border-[#f8614a]/50">
+      <Card className="h-full overflow-hidden transition hover:-translate-y-0.5 hover:border-stellar-cyan/45 hover:shadow-[0_0_0_1px_rgba(84,210,255,0.12),6px_6px_0_rgba(248,97,74,0.26),0_26px_70px_rgba(0,0,0,0.45)]">
         <div className="flex items-start justify-between gap-4">
-          <span className="grid h-12 w-12 place-items-center rounded-[1rem] border border-stellar-cyan/25 bg-stellar-cyan/12 text-stellar-cyan shadow-[5px_5px_0_rgba(248,97,74,0.24)]">
+          <span className="grid h-12 w-12 place-items-center rounded-lg border border-stellar-cyan/28 bg-stellar-cyan/12 text-stellar-cyan shadow-[5px_5px_0_rgba(248,97,74,0.25)]">
             <Icon className="h-5 w-5" aria-hidden />
           </span>
           <Badge tone={statusTone[status]}>{status}</Badge>

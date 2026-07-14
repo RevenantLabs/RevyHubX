@@ -5,11 +5,16 @@ import { NetworkProvider } from "@/components/stellar/NetworkProvider";
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <NetworkProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[linear-gradient(180deg,rgba(255,255,255,0.035),transparent_22rem)]">
         <AppHeader />
-        <div className="mx-auto flex max-w-7xl">
+        <div className="mx-auto flex max-w-7xl border-x border-[#fff1cc]/10 bg-[#070910]/42 shadow-[0_0_80px_rgba(0,0,0,0.34)]">
           <Sidebar />
-          <main className="min-w-0 flex-1 px-4 py-8 sm:px-6 lg:px-8">{children}</main>
+          <main className="min-w-0 flex-1 px-4 py-8 sm:px-6 lg:px-8">
+            <div className="relative">
+              <div className="pointer-events-none absolute -left-4 -right-4 top-0 h-px bg-gradient-to-r from-transparent via-stellar-cyan/45 to-transparent" />
+              {children}
+            </div>
+          </main>
         </div>
       </div>
     </NetworkProvider>
