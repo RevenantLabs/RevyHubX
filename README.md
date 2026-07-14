@@ -80,6 +80,8 @@ npm run build
 
 See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for the code structure and maintainer expectations.
 
+Security expectations are documented in [SECURITY.md](./SECURITY.md).
+
 ## Deploy on Vercel
 
 <!-- TODO(issue #20): Replace this short section with a full Vercel deployment guide, screenshots, env validation, and common errors. -->
