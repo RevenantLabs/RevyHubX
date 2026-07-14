@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -54,6 +55,21 @@ export default function TrustlineCheckerPage() {
         </form>
       </Card>
       <StatusMessage type={message.type} title="Inspector report" description={message.text} />
+      {message.type === "error" && message.text.includes("Account not found on Stellar testnet") ? (
+        <StatusMessage
+          type="info"
+          title="Fund the testnet account first"
+          description="A trustline can only be checked after the account exists on testnet."
+          action={
+            <Link
+              href="/tools/testnet-faucet"
+              className="inline-flex rounded-md border border-[#54d2ff]/35 px-3 py-2 text-sm font-extrabold text-stellar-cyan hover:bg-[#54d2ff]/10"
+            >
+              Open Testnet Faucet Helper
+            </Link>
+          }
+        />
+      ) : null}
     </div>
   );
 }

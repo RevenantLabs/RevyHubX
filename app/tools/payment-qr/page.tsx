@@ -1,7 +1,6 @@
 "use client";
 
 import QRCode from "qrcode";
-import { Copy } from "lucide-react";
 import { useState } from "react";
 import { AddressInput } from "@/components/stellar/AddressInput";
 import { QRPreview } from "@/components/stellar/QRPreview";
@@ -10,6 +9,7 @@ import { Card } from "@/components/ui/Card";
 import { CharacterPanel } from "@/components/ui/CharacterPanel";
 import { Input } from "@/components/ui/Input";
 import { StatusMessage } from "@/components/ui/StatusMessage";
+import { copyText } from "@/lib/copy";
 import { createPaymentUri } from "@/lib/stellar/paymentUri";
 
 export default function PaymentQrPage() {
@@ -40,10 +40,13 @@ export default function PaymentQrPage() {
   }
 
   async function copyUri() {
-    // TODO(issue #22): Replace direct clipboard calls with a shared copy utility that handles permission failures.
     if (!uri) return;
-    await navigator.clipboard.writeText(uri);
-    setMessage({ type: "success", text: "Payment URI copied from the rocket assistant." });
+    try {
+      await copyText(uri);
+      setMessage({ type: "success", text: "Payment URI copied from the rocket assistant." });
+    } catch (error) {
+      setMessage({ type: "error", text: error instanceof Error ? error.message : "Clipboard permission failed." });
+    }
   }
 
   return (
@@ -96,7 +99,6 @@ export default function PaymentQrPage() {
             <Card className="space-y-3">
               <p className="break-all text-xs text-slate-300">{uri}</p>
               <Button type="button" variant="secondary" onClick={copyUri}>
-                <Copy className="h-4 w-4" aria-hidden />
                 Copy URI
               </Button>
             </Card>

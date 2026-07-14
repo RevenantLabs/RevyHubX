@@ -7,6 +7,7 @@ interface StatusMessageProps {
   type: StatusType;
   title: string;
   description?: string;
+  action?: React.ReactNode;
 }
 
 const statusStyles: Record<StatusType, string> = {
@@ -23,7 +24,7 @@ const icons = {
   info: Info
 };
 
-export function StatusMessage({ type, title, description }: StatusMessageProps) {
+export function StatusMessage({ type, title, description, action }: StatusMessageProps) {
   const Icon = icons[type];
 
   return (
@@ -32,9 +33,10 @@ export function StatusMessage({ type, title, description }: StatusMessageProps) 
       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#fff1cc]/12">
         <Icon className="h-5 w-5" aria-hidden />
       </span>
-      <div>
+      <div className="min-w-0 flex-1">
         <p className="text-sm font-extrabold">{title}</p>
         {description ? <p className="mt-1 text-sm text-slate-300">{description}</p> : null}
+        {action ? <div className="mt-3">{action}</div> : null}
       </div>
     </div>
   );

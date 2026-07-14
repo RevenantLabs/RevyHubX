@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/Badge";
-import { truncateMiddle } from "@/lib/utils";
+import { CopyableValue } from "@/components/stellar/CopyableValue";
 
 export interface DisplayBalance {
   assetCode: string;
@@ -20,8 +20,11 @@ export function BalanceList({ balances }: { balances: DisplayBalance[] }) {
             <div>
               <p className="text-sm font-semibold text-white">{balance.assetCode}</p>
               <p className="mt-1 text-xs text-slate-500">
-                {/* TODO(issue #23): Replace simple truncation with a copyable issuer display helper. */}
-                {balance.issuer ? truncateMiddle(balance.issuer) : "Native Stellar asset in the moon wallet"}
+                {balance.issuer ? (
+                  <CopyableValue label={`${balance.assetCode} issuer`} value={balance.issuer} />
+                ) : (
+                  "Native Stellar asset in the moon wallet"
+                )}
               </p>
             </div>
             <Badge tone="info">{balance.amount}</Badge>

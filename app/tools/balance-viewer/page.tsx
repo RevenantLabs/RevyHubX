@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -54,6 +55,21 @@ export default function BalanceViewerPage() {
         </form>
       </Card>
       <StatusMessage type={message.type} title={message.type === "success" ? "Wallet opened" : "Moon wallet status"} description={message.text} />
+      {message.type === "error" && message.text.includes("Account not found on Stellar testnet") ? (
+        <StatusMessage
+          type="info"
+          title="Create the testnet account"
+          description="Testnet accounts only exist after they receive testnet XLM."
+          action={
+            <Link
+              href="/tools/testnet-faucet"
+              className="inline-flex rounded-md border border-[#54d2ff]/35 px-3 py-2 text-sm font-extrabold text-stellar-cyan hover:bg-[#54d2ff]/10"
+            >
+              Open Testnet Faucet Helper
+            </Link>
+          }
+        />
+      ) : null}
       {balances.length > 0 ? <BalanceList balances={balances} /> : null}
     </div>
   );
