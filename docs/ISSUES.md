@@ -554,7 +554,7 @@ Intermediate
 
 ### Description
 
-Add a step-by-step guide for deploying Stellar DevTools Hub to Vercel.
+Add a step-by-step guide for deploying RevyHubX to Vercel.
 
 ### Maintainer Status
 

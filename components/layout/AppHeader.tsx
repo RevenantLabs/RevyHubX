@@ -16,7 +16,7 @@ export function AppHeader() {
           <span className="relative h-12 w-12 overflow-hidden rounded-[1rem] border border-[#fff1cc]/50 bg-[#fff1cc] shadow-[4px_4px_0_#f8614a]">
             <Image
               src="/devtool-profile.png"
-              alt="Stellar DevTools Hub profile character"
+              alt="RevyHubX profile character"
               fill
               sizes="48px"
               className="object-cover"
@@ -24,7 +24,7 @@ export function AppHeader() {
             />
           </span>
           <span>
-            <span className="block text-sm font-semibold text-white">Stellar DevTools Hub</span>
+            <span className="block text-sm font-semibold text-white">RevyHubX</span>
             <span className="block text-xs text-[#f7deb0]">Anthropomorphic testnet helpers</span>
           </span>
         </Link>
@@ -48,7 +48,7 @@ export function AppHeader() {
           </label>
           <Badge tone={network === "testnet" ? "info" : "warning"}>{network}</Badge>
           <a
-            href="https://github.com/STELLAR-HOUSE/stellar-devtools-hub"
+            href="https://github.com/RevenantLabs/RevyHubX"
             className="hidden items-center gap-2 rounded-md border border-white/10 px-3 py-2 text-sm text-slate-300 transition hover:border-stellar-cyan/40 hover:text-white sm:inline-flex"
           >
             <Github className="h-4 w-4" aria-hidden />

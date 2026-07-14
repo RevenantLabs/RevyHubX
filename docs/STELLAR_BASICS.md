@@ -1,6 +1,6 @@
 # Stellar Basics
 
-This page explains the Stellar concepts used by Stellar DevTools Hub.
+This page explains the Stellar concepts used by RevyHubX.
 
 ## Public Keys
 

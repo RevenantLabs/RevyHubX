@@ -1,10 +1,10 @@
-# Stellar DevTools Hub
+# RevyHubX
 
 Open-source web toolkit for Stellar developers. The MVP includes address validation, testnet balance inspection, trustline checks, payment QR generation, transaction lookup, Freighter wallet examples, and a Friendbot helper.
 
 ## Why This Exists
 
-Stellar developers often need small utilities while learning, testing, or building integrations. Stellar DevTools Hub collects those workflows in one Vercel-friendly Next.js app with clean, modular code that contributors can extend.
+Stellar developers often need small utilities while learning, testing, or building integrations. RevyHubX collects those workflows in one Vercel-friendly Next.js app with clean, modular code that contributors can extend.
 
 ## GrantFox Context
 
@@ -39,8 +39,8 @@ New to Stellar concepts? Read [docs/STELLAR_BASICS.md](./docs/STELLAR_BASICS.md)
 ## Local Setup
 
 ```bash
-git clone https://github.com/STELLAR-HOUSE/stellar-devtools-hub.git
-cd stellar-devtools-hub
+git clone https://github.com/RevenantLabs/RevyHubX.git
+cd RevyHubX
 npm install
 ```
 

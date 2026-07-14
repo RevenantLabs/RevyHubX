@@ -9,7 +9,7 @@ interface NetworkContextValue {
 }
 
 const NetworkContext = createContext<NetworkContextValue | null>(null);
-const storageKey = "stellar-devtools-network";
+const storageKey = "revyhubx-network";
 
 function readInitialNetwork(): StellarNetwork {
   if (typeof window === "undefined") {

@@ -1,12 +1,12 @@
 # Contributing
 
-Thanks for helping improve Stellar DevTools Hub. This project is intentionally modular so contributors can pick focused Stellar, UI, testing, or documentation tasks.
+Thanks for helping improve RevyHubX. This project is intentionally modular so contributors can pick focused Stellar, UI, testing, or documentation tasks.
 
 ## Clone and Install
 
 ```bash
-git clone https://github.com/STELLAR-HOUSE/stellar-devtools-hub.git
-cd stellar-devtools-hub
+git clone https://github.com/RevenantLabs/RevyHubX.git
+cd RevyHubX
 npm install
 ```
 

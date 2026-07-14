@@ -4,14 +4,14 @@ import { AppShell } from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
-  title: "Stellar DevTools Hub",
+  title: "RevyHubX",
   description: "Open-source developer utilities for Stellar testnet workflows.",
   icons: {
     icon: "/devtool-profile.png",
     apple: "/devtool-profile.png"
   },
   openGraph: {
-    title: "Stellar DevTools Hub",
+    title: "RevyHubX",
     description: "Open-source developer utilities for Stellar testnet workflows.",
     images: ["/devtool-profile.png"]
   }

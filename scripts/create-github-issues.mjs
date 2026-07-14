@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const repoRoot = fileURLToPath(new URL("..", import.meta.url));
 const issuesPath = join(repoRoot, "docs", "ISSUES.md");
-const defaultRepo = "STELLAR-HOUSE/stellar-devtools-hub";
+const defaultRepo = "RevenantLabs/RevyHubX";
 const repo = process.env.GITHUB_REPOSITORY || process.env.GH_REPO || defaultRepo;
 const dryRun = process.argv.includes("--dry-run");
 

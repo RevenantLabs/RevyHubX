@@ -1,6 +1,6 @@
 # Security Policy
 
-Stellar DevTools Hub is a developer utility for public Stellar workflows. It must never ask for private keys, seed phrases, or wallet recovery material.
+RevyHubX is a developer utility for public Stellar workflows. It must never ask for private keys, seed phrases, or wallet recovery material.
 
 ## Supported Version
 

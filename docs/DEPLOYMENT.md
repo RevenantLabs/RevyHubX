@@ -4,7 +4,7 @@ This project is ready for Vercel's standard Next.js deployment flow.
 
 ## Vercel Setup
 
-1. Import `https://github.com/STELLAR-HOUSE/stellar-devtools-hub` into Vercel.
+1. Import `https://github.com/RevenantLabs/RevyHubX` into Vercel.
 2. Keep the framework preset as Next.js.
 3. Keep the install command as `npm install` or Vercel's detected default.
 4. Keep the build command as `npm run build`.

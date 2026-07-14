@@ -1,6 +1,6 @@
 # Architecture
 
-Stellar DevTools Hub is a Next.js App Router application that keeps user-facing tool pages, reusable UI, and Stellar SDK logic in separate layers.
+RevyHubX is a Next.js App Router application that keeps user-facing tool pages, reusable UI, and Stellar SDK logic in separate layers.
 
 ## Application Layers
 

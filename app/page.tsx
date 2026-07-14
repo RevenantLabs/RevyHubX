@@ -14,7 +14,7 @@ export default function HomePage() {
             Anthropomorphic Stellar toolkit
           </p>
           <h1 className="mt-4 max-w-4xl text-4xl font-bold tracking-normal text-white sm:text-5xl">
-            Stellar DevTools Hub, with tools that behave like helpful characters.
+            RevyHubX, with tools that behave like helpful characters.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
             A character-led workspace for validating addresses, inspecting testnet
